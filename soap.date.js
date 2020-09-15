@@ -8,19 +8,35 @@ Date.prototype.unixTime = function (timezone = 0) {
 };
 
 /**
+ * 取得當地時間的 ISO
+ * @param timezone 預設為 0 時區
+ * @returns {Date}
+ */
+Date.prototype.toIsoStringTimeZone = function(timezone = 0){
+
+    return new Date(new Date().unixTime(timezone) * 1000);
+}
+
+/**
  * 取得 yyyy-mm-dd 格式的日期
- * @param utcTime 預設為 0 時區的 Unix Time
+ * @param timezone 預設為 0 時區
  * @returns {string}
  */
-Date.prototype.yyyymmdd = function (utcTime = new Date().unixTime()) {
+Date.prototype.yyyymmdd = function (timezone = 0) {
 
-    const date = new Date(utcTime * 1000);
+    const date = new Date(new Date().unixTime(timezone) * 1000);
 
-    const yyyy = date.getFullYear();
-    const mm = date.getMonth() + 1;
-    const dd = date.getDate();
+    const yyyy = date.getUTCFullYear();
+    const mm = date.getUTCMonth() + 1;
+    const dd = date.getUTCDate();
+    const hh = date.getUTCHours();
+    const mi = date.getUTCMinutes();
+    const ss = date.getUTCSeconds();
 
     return yyyy + "-" +
         ((mm < 10) ? "0" : "" ) + mm + "-" +
-        ((dd < 10) ? "0" : "" ) + dd;
+        ((dd < 10) ? "0" : "" ) + dd + " " +
+        ((hh < 10) ? "0" : "" ) + hh + ":" +
+        ((mi < 10) ? "0" : "" ) + mi + ":" +
+        ((ss < 10) ? "0" : "" ) + ss;
 }
