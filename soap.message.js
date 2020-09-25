@@ -39,7 +39,7 @@ module.exports.db_finish = function(res,data = undefined)
 module.exports.db_check = function (err,res,doc = null) {
     if(err)
     {
-        res.json(packet(200,err.message));
+        res.json(packet(200,"error",err.message));
         return false;
     }
     else if(doc === undefined)

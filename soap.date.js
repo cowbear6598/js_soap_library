@@ -26,12 +26,12 @@ Date.prototype.yyyymmdd = function (timezone = 0) {
 
     const date = new Date(new Date().unixTime(timezone) * 1000);
 
-    const yyyy = date.getUTCFullYear();
-    const mm = date.getUTCMonth() + 1;
-    const dd = date.getUTCDate();
-    const hh = date.getUTCHours();
-    const mi = date.getUTCMinutes();
-    const ss = date.getUTCSeconds();
+    const yyyy = date.getFullYear();
+    const mm = date.getMonth() + 1;
+    const dd = date.getDate();
+    const hh = date.getHours();
+    const mi = date.getMinutes();
+    const ss = date.getSeconds();
 
     return yyyy + "-" +
         ((mm < 10) ? "0" : "" ) + mm + "-" +
@@ -39,4 +39,17 @@ Date.prototype.yyyymmdd = function (timezone = 0) {
         ((hh < 10) ? "0" : "" ) + hh + ":" +
         ((mi < 10) ? "0" : "" ) + mi + ":" +
         ((ss < 10) ? "0" : "" ) + ss;
+}
+
+
+/**
+ * 比對 yyyymmdd 格式是否為今天
+ * @param otherDate
+ * @returns {boolean}
+ */
+module.exports.yyyymmddIsToday = function (otherDate) {
+    const todayDate = new Date(new Date().yyyymmdd());
+    const compareDate = new Date(otherDate);
+
+    return todayDate.getFullYear() == compareDate.getFullYear() && todayDate.getMonth() == compareDate.getMonth() && todayDate.getDate() == compareDate.getDate();
 }
