@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  * 取得對應時區的 Unix Time 不包含毫秒
  * @param timezone 輸入需要調整多少時區，預設為 0
  * @returns {number}
  */
 Date.prototype.unixTime = function (timezone = 0) {
-    return Math.floor((Date.now() + (timezone * 3600 * 1000)) / 1000)
+    return Math.floor((new Date(new Date().toUTCString()).getTime() + (timezone * 3600 * 1000)) / 1000)
 };
 
 /**
@@ -26,12 +28,12 @@ Date.prototype.yyyymmdd = function (timezone = 0) {
 
     const date = new Date(new Date().unixTime(timezone) * 1000);
 
-    const yyyy = date.getFullYear();
-    const mm = date.getMonth() + 1;
-    const dd = date.getDate();
-    const hh = date.getHours();
-    const mi = date.getMinutes();
-    const ss = date.getSeconds();
+    const yyyy = date.getUTCFullYear();
+    const mm = date.getUTCMonth() + 1;
+    const dd = date.getUTCDate();
+    const hh = date.getUTCHours();
+    const mi = date.getUTCMinutes();
+    const ss = date.getUTCSeconds();
 
     return yyyy + "-" +
         ((mm < 10) ? "0" : "" ) + mm + "-" +
@@ -40,16 +42,16 @@ Date.prototype.yyyymmdd = function (timezone = 0) {
         ((mi < 10) ? "0" : "" ) + mi + ":" +
         ((ss < 10) ? "0" : "" ) + ss;
 }
-
-
 /**
  * 比對 yyyymmdd 格式是否為今天
  * @param otherDate
  * @returns {boolean}
  */
 module.exports.yyyymmddIsToday = function (otherDate) {
-    const todayDate = new Date(new Date().yyyymmdd());
-    const compareDate = new Date(otherDate);
+    const todayDate = new Date(new Date().yyyymmdd(8));
+    const compareUnixTime = new Date(otherDate);
+    const compareDate = new Date(Date.UTC(compareUnixTime.getFullYear(),compareUnixTime.getMonth(),compareUnixTime.getDate(),
+        compareUnixTime.getHours(),compareUnixTime.getMinutes(),compareUnixTime.getSeconds()))
 
     return todayDate.getFullYear() == compareDate.getFullYear() && todayDate.getMonth() == compareDate.getMonth() && todayDate.getDate() == compareDate.getDate();
 }
