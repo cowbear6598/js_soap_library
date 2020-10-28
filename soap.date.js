@@ -31,6 +31,24 @@ Date.prototype.yyyymmdd = function (timezone = 0) {
     const yyyy = date.getUTCFullYear();
     const mm = date.getUTCMonth() + 1;
     const dd = date.getUTCDate();
+
+    return yyyy + "-" +
+        ((mm < 10) ? "0" : "" ) + mm + "-" +
+        ((dd < 10) ? "0" : "" ) + dd;
+}
+
+/**
+ * 取得 yyyy-mm-dd hh-mm-ss 格式的日期
+ * @param timezone 預設為 0 時區
+ * @returns {string}
+ */
+Date.prototype.yyyymmddhhmmss = function (timezone = 0) {
+
+    const date = new Date(new Date().unixTime(timezone) * 1000);
+
+    const yyyy = date.getUTCFullYear();
+    const mm = date.getUTCMonth() + 1;
+    const dd = date.getUTCDate();
     const hh = date.getUTCHours();
     const mi = date.getUTCMinutes();
     const ss = date.getUTCSeconds();
@@ -42,6 +60,7 @@ Date.prototype.yyyymmdd = function (timezone = 0) {
         ((mi < 10) ? "0" : "" ) + mi + ":" +
         ((ss < 10) ? "0" : "" ) + ss;
 }
+
 /**
  * 比對 yyyymmdd 格式是否為今天
  * @param otherDate
