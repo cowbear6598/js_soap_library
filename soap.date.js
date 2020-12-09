@@ -6,7 +6,17 @@
  * @returns {number}
  */
 Date.prototype.unixTime = function (timezone = 0) {
-    return Math.floor((new Date(new Date().toUTCString()).getTime() + (timezone * 3600 * 1000)) / 1000)
+    return Math.floor((new Date().getTime() + (timezone * 3600 * 1000)) / 1000)
+};
+
+/**
+ * 取得對應時區的 Unix Time 包含毫秒
+ * @param timezone 輸入需要調整多少時區，預設為 0
+ * @returns {number}
+ */
+
+Date.prototype.unixTimeMillisecond = function (timezone = 0) {
+    return Math.floor((new Date().getTime() + (timezone * 3600 * 1000)))
 };
 
 /**
