@@ -1,0 +1,13 @@
+{
+  "name": "@cptsoap/utils",
+  "version": "1.0.7",
+  "license": "MIT",
+  "keywords": [
+    "soap",
+    "utils",
+    "log",
+    "crypt"
+  ],
+  "dependencies": {
+  }
+}
