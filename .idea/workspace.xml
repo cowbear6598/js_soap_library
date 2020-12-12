@@ -4,8 +4,13 @@
     <list default="true" id="ba746574-421a-4af3-88c0-7399d8de448b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soap.message.js" beforeDir="false" afterPath="$PROJECT_DIR$/soap.message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soap.crypt.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/soap.crypt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soap.date.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/soap.date.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soap.log.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/soap.log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soap.message.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/soap.message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soap.utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/soap.utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +41,13 @@
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../lanso-server" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\CptSoap\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\203.5981.135\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NodeProject\js_soap_library\lib" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607756706002</updated>
-      <workItem from="1607756707201" duration="3771000" />
+      <workItem from="1607756707201" duration="4926000" />
     </task>
     <servers />
   </component>
