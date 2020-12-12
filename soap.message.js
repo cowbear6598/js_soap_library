@@ -1,4 +1,4 @@
-const soapLog = require('../js_soap_library/soap.log');
+const soapLog = require('./soap.log');
 
 /**
  * 打包成 json 內容並回傳
