@@ -4,8 +4,8 @@ const fs = require('fs');
 const util = require('util');
 const path = require('path');
 
-const soapUtils = require('../js_soap_library/soap.utils');
-const soapDate = require('../js_soap_library/soap.date');
+const soapUtils = require('./soap.utils');
+const soapDate = require('./soap.date');
 
 let savePath = path.join(__dirname ,'/log/' + new Date().yyyymmdd(8) + '_server.log');
 
